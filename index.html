@@ -17,40 +17,42 @@
 
         <div class="inputs-wrapper">
           <label for="athlete-name">Athlete Name</label>
-          <input type="text" id="athlete-name" name="athlete-name" required />
+          <input type="text" id="athlete-name" name="athlete-name" />
 
-          <div class="training-plan-wrapper" role="radiogroup">
-            <label>Training Plan</label>
+          <div
+            for="training-plan"
+            class="training-plan-wrapper"
+            role="radiogroup"
+          >
+            <label id="training-plan">Training Plan</label>
+
             <div class="radio-button-field">
               <input
-                id="training-plan"
+                id="beginner"
                 type="radio"
                 name="training-plan"
                 value="beginner"
-                required
-                checked
               />
               <label for="beginner">Beginner - 2 sessions p/wk</label>
             </div>
 
             <div class="radio-button-field">
               <input
-                id="training-plan"
                 type="radio"
+                id="intermediate"
                 name="training-plan"
                 value="intermediate"
-                required
               />
               <label for="intermediate">Intermediate - 3 sessions p/wk</label>
             </div>
 
             <div class="radio-button-field">
-              <input 
-                id="training-plan" 
-                type="radio" 
-                name="training-plan" 
-                value="elite" 
-                required />
+              <input
+                type="radio"
+                id="elite"
+                name="training-plan"
+                value="elite"
+              />
               <label for="elite">Elite - 5 sessions p/wk</label>
             </div>
           </div>
@@ -64,14 +66,22 @@
             <label for="competitions-entered"
               >Number of Competitions Entered this Month (Optional)</label
             >
-            <input id="competitions" type="number" name="competitions-entered" />
+            <input
+              id="competitions"
+              type="number"
+              name="competitions-entered"
+            />
           </div>
 
           <div>
             <label for="private-coaching-hours"
               >Number of Hours of Private Coaching (Optional)</label
             >
-            <input id="private-hours" type="number" name="private-coaching-hours" />
+            <input
+              id="private-hours"
+              type="number"
+              name="private-coaching-hours"
+            />
           </div>
 
           <div>
