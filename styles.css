@@ -11,6 +11,7 @@
   --slate-500: #64748b;
   --slate-300: #cbd5e1;
   --white: #ffffff;
+  --error-bkg: rgb(255, 120, 120);
 }
 
 /*
@@ -231,4 +232,25 @@ button:active {
 .radio-button-field input:checked + label {
   background-color: var(--sky-600);
   color: var(--sky-50);
+}
+
+.error-input {
+  background-color: var(--error-bkg);
+  color: var(--brand-dark);
+  border-color: var(--brand-dark);
+}
+
+.error-label {
+  color: rgb(160, 0, 0);
+}
+.error-message ul {
+  padding-left: 0;
+}
+.error-message ul li {
+  color: rgb(255, 60, 60);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.1px;
+  list-style: none;
+  margin-bottom: 0.5rem;
 }
