@@ -4,20 +4,21 @@
 // Capture user's input on form submission
 let form = document.querySelector("form");
 
-form.addEventListener("submit", function () {
+form.addEventListener("submit", function (event) {
   event.preventDefault();
-  console.log("Form submitted");
 
   // Store athletes name
   let athleteName = document.querySelector("#athlete-name").value;
-  // Store athletes name
+  // Store training plan
   let trainingPlan = form.elements["training-plan"].value;
-  // Store athletes name
-  let currentWeight = document.querySelector("#current-weight").value;
-  // Store athletes name
-  let competitions = document.querySelector("#competitions").value;
-  // Store athletes name
-  let privateHours = document.querySelector("#private-hours").value;
+  // Store weight
+  let currentWeight = parseInt(document.querySelector("#current-weight").value);
+  // Store competitions
+  let competitions =
+    parseInt(document.querySelector("#competitions").value) || 0;
+  // Store private coaching hours
+  let privateHours =
+    parseInt(document.querySelector("#private-hours").value) || 0;
 
   // Validate the user's input
   // check users name is entered
@@ -31,8 +32,27 @@ form.addEventListener("submit", function () {
     return;
   }
   // check weight is provided
-  if (currentWeight === "") {
+  if (isNaN(currentWeight)) {
     alert("Please enter your current weight");
+    return;
+  }
+  if (currentWeight < 0) {
+    alert("Weight must be above zero");
+    return;
+  }
+  // beginner athletes cannot enter competitions
+  if (trainingPlan === "beginner" && competitions !== 0) {
+    alert("Beginner athletes cannot enter competitions");
+    return;
+  }
+  // check competitions is above or equal to 0, private hours between 0 and 5
+  if (competitions < 0) {
+    alert("Number of competitions must be above zero");
+    return;
+  }
+
+  if (privateHours < 0 || privateHours > 5) {
+    alert("Private coaching hours must be between 0 and 5");
     return;
   }
 
@@ -49,8 +69,6 @@ form.addEventListener("submit", function () {
 //      check weight is provided
 //      check weight is a number
 //      check num of competitions is provided
-//      check num of competitions is a number
-//      check num of hours for private coaching is provided
 //      check num of hours for private coaching is a number between 1 and 5
 // Generate weight category based on input
 // Calculate the total cost
