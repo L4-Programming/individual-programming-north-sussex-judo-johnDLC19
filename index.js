@@ -1,5 +1,6 @@
 import { validateForm } from "./validateForm.js";
 import { calculateCosts } from "./calculateCosts.js";
+import { displayResults } from "./displayResults.js";
 // Display form to the user
 // Capture user's input on form submission
 let form = document.querySelector("form");
@@ -34,8 +35,9 @@ form.addEventListener("submit", function (event) {
     //calculate total cost
     const output = calculateCosts(result);
     console.log({ output });
+
+    // Display the total cost to the user
+    // Generate weight category based on input
+    displayResults(output, currentWeight);
   }
 });
-
-// Generate weight category based on input
-// Display the total cost to the user

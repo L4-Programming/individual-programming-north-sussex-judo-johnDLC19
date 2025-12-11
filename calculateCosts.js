@@ -3,19 +3,17 @@ export function calculateCosts(data) {
   console.log({ data });
   const { athleteName, trainingPlan, competitions, privateHours } = data;
 
-  const prices = {
+  const trainingPrices = {
     beginner: 25,
     intermediate: 30,
     elite: 35,
-    competitions: 22,
-    privateHours: 9.5,
   };
 
   const PRIVATE_HOUR_RATE = 9.5;
   const COMPETITION_RATE = 22;
   const TRAINING_WEEKS = 4;
 
-  let trainingCost = prices[trainingPlan];
+  let trainingCost = trainingPrices[trainingPlan];
   let privateCost = privateHours * PRIVATE_HOUR_RATE;
   let competitionCost = competitions * COMPETITION_RATE;
 
