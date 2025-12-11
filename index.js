@@ -7,6 +7,7 @@ let form = document.querySelector("form");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
+  removeErrors();
   let errors = {};
   function addError(field, message) {
     if (!errors[field]) {
@@ -82,6 +83,27 @@ form.addEventListener("submit", function (event) {
       errorDiv.appendChild(ul);
     }
   }
+
+  // Removes previous error messages and styles
+function removeErrors() {
+  let errorInputs = document.querySelectorAll(".error-input");
+  errorInputs.forEach((input) => {
+    input.classList.remove("error-input");
+  });
+
+  let errorLabels = document.querySelectorAll(".error-label");
+  errorLabels.forEach((label) => {
+    label.classList.remove("error-label");
+  });
+
+  let errorMessages = document.querySelectorAll(".error-message");
+  errorMessages.forEach((div) => {
+    div.classList.remove("error-message");
+    div.innerHTML = "";
+  });
+}
+
+
 
   console.log({ errors });
 });
