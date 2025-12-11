@@ -1,4 +1,5 @@
 import { validateForm } from "./validateForm.js";
+import { calculateCosts } from "./calculateCosts.js";
 // Display form to the user
 // Capture user's input on form submission
 let form = document.querySelector("form");
@@ -22,6 +23,9 @@ form.addEventListener("submit", function (event) {
 const result = validateForm({athleteName, trainingPlan, currentWeight, competitions, privateHours});
 
   console.log({ result });
+  if (result) {
+    calculateCosts(result);
+  }
 });
 
 // Generate weight category based on input
