@@ -20,14 +20,22 @@ form.addEventListener("submit", function (event) {
   let privateHours =
     parseInt(document.querySelector("#private-hours").value) || 0;
 
-const result = validateForm({athleteName, trainingPlan, currentWeight, competitions, privateHours});
+  const result = validateForm({
+    athleteName,
+    trainingPlan,
+    currentWeight,
+    competitions,
+    privateHours,
+  });
 
   console.log({ result });
+
   if (result) {
-    calculateCosts(result);
+    //calculate total cost
+    const output = calculateCosts(result);
+    console.log({ output });
   }
 });
 
 // Generate weight category based on input
-// Calculate the total cost
 // Display the total cost to the user
