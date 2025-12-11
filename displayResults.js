@@ -21,7 +21,7 @@ export function displayResults(output, currentWeight) {
     <h3>Your Weight Category: ${weightCategory}</h3>
     <p>Your Selected Training Plan: ${output.trainingPlan}</p>
     <p>Training Cost (per week): £${output.trainingCost}</p>
-    <p>Number of Competitions Entered This Month: ${output.competitions}</p>
+    <p>Number of Competitions Entered This Month: ${output.numOfCompetitions}</p>
     <p>Total Competition Cost: £${output.competitionCost}</p>
     <p>Private Coaching Hours: ${output.privateHours}</p>
     <p>Private Coaching Cost: £${output.privateCost}</p>

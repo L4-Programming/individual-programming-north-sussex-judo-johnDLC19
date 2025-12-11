@@ -15,8 +15,8 @@ form.addEventListener("submit", function (event) {
   // Store weight
   let currentWeight = parseInt(document.querySelector("#current-weight").value);
   // Store competitions
-  let competitions =
-    parseInt(document.querySelector("#competitions").value) || 0;
+  let numOfCompetitions =
+    parseInt(document.querySelector("#numOfCompetitions").value) || 0;
   // Store private coaching hours
   let privateHours =
     parseInt(document.querySelector("#private-hours").value) || 0;
@@ -25,7 +25,7 @@ form.addEventListener("submit", function (event) {
     athleteName,
     trainingPlan,
     currentWeight,
-    competitions,
+    numOfCompetitions,
     privateHours,
   });
 

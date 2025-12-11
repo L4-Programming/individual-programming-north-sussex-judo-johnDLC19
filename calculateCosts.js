@@ -1,7 +1,7 @@
 export function calculateCosts(data) {
   console.log("Calculating costs...");
   console.log({ data });
-  const { athleteName, trainingPlan, competitions, privateHours } = data;
+  const { athleteName, trainingPlan, numOfCompetitions, privateHours } = data;
 
   const trainingPrices = {
     beginner: 25,
@@ -15,11 +15,11 @@ export function calculateCosts(data) {
 
   let trainingCost = trainingPrices[trainingPlan];
   let privateCost = privateHours * PRIVATE_HOUR_RATE;
-  let competitionCost = competitions * COMPETITION_RATE;
+  let competitionCost = numOfCompetitions * COMPETITION_RATE;
 
   const totalCost =
     trainingCost * TRAINING_WEEKS +
-    competitions * competitionCost +
+    numOfCompetitions * competitionCost +
     privateHours * privateCost;
 
   const output = {
@@ -27,7 +27,7 @@ export function calculateCosts(data) {
     name: athleteName,
     trainingPlan: data.trainingPlan,
     trainingCost: trainingCost.toFixed(2),
-    competitions,
+    numOfCompetitions,
     competitionCost: competitionCost.toFixed(2),
     privateHours,
     privateCost: privateCost.toFixed(2),

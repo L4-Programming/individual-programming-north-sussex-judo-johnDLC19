@@ -1,6 +1,6 @@
 export function displayErrors(errors) {
   // Add error class to input elements with errors
-    for (let field in errors) {
+  for (let field in errors) {
     let inputElement = document.querySelector(`#${field}`);
     let labelElement = document.querySelector(`label[for=${field}]`);
     if (inputElement) {
@@ -27,7 +27,13 @@ export function displayErrors(errors) {
   }
 }
 
-export function validateForm({athleteName, trainingPlan, currentWeight, competitions, privateHours}) {
+export function validateForm({
+  athleteName,
+  trainingPlan,
+  currentWeight,
+  numOfCompetitions,
+  privateHours,
+}) {
   removeErrors();
   let errors = {};
   function addError(field, message) {
@@ -53,36 +59,39 @@ export function validateForm({athleteName, trainingPlan, currentWeight, competit
     addError("current-weight", "Weight must be above zero");
   }
   // beginner athletes cannot enter competitions
-  if (trainingPlan === "beginner" && competitions !== 0) {
-    addError("competitions", "Beginner athletes cannot enter competitions");
+  if (trainingPlan === "beginner" && numOfCompetitions !== 0) {
+    addError(
+      "numOfCompetitions",
+      "Beginner athletes cannot enter competitions"
+    );
   }
   // check competitions is above or equal to 0, private hours between 0 and 5
-  if (competitions < 0) {
-    addError("competitions", "Number of competitions must be above zero");
+  if (numOfCompetitions < 0) {
+    addError("numOfCompetitions", "Number of competitions must be above zero");
   }
 
   if (privateHours < 0 || privateHours > 5) {
     addError("private-hours", "Private coaching hours must be between 0 and 5");
   }
   // Removes previous error messages and styles
-function removeErrors() {
-  let errorInputs = document.querySelectorAll(".error-input");
-  errorInputs.forEach((input) => {
-    input.classList.remove("error-input");
-  });
+  function removeErrors() {
+    let errorInputs = document.querySelectorAll(".error-input");
+    errorInputs.forEach((input) => {
+      input.classList.remove("error-input");
+    });
 
-  let errorLabels = document.querySelectorAll(".error-label");
-  errorLabels.forEach((label) => {
-    label.classList.remove("error-label");
-  });
+    let errorLabels = document.querySelectorAll(".error-label");
+    errorLabels.forEach((label) => {
+      label.classList.remove("error-label");
+    });
 
-  let errorMessages = document.querySelectorAll(".error-message");
-  errorMessages.forEach((div) => {
-    div.classList.remove("error-message");
-    div.innerHTML = "";
-  });
-}
-// Return early if there are any errors
+    let errorMessages = document.querySelectorAll(".error-message");
+    errorMessages.forEach((div) => {
+      div.classList.remove("error-message");
+      div.innerHTML = "";
+    });
+  }
+  // Return early if there are any errors
   if (Object.keys(errors).length > 0) {
     displayErrors(errors);
     return false;
@@ -92,8 +101,7 @@ function removeErrors() {
     athleteName,
     trainingPlan,
     currentWeight,
-    competitions,
+    numOfCompetitions,
     privateHours,
-  }
-
+  };
 }
