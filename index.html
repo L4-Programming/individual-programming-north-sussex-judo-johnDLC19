@@ -77,7 +77,7 @@
               type="number"
               name="competitions-entered"
             />
-            <div id="competitions-error"></div>
+            <div id="numOfCompetitions-error"></div>
           </div>
 
           <div>
@@ -98,13 +98,15 @@
         </div>
       </form>
 
-      <div class="athlete-info">
+      <div class="athlete-info hidden">
         <h2>Athlete Information</h2>
         <hr />
 
         <div class="outputs-wrapper">
           <div id="results" class="output-field">Awaiting Input...</div>
         </div>
+
+        <button id="reset-button" type="button">Reset Form?</button>
       </div>
     </div>
     <script type="module" src="index.js"></script>

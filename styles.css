@@ -114,7 +114,17 @@ form {
   background-color: var(--amber-100);
   border-radius: 8px;
   justify-content: center;
+  box-shadow:  0 4px 12px rgba(0, 0, 0, 0.4);
 }
+
+/* 
+.inputs-wrapper {
+  background-color: var(--amber-100);
+  border-radius: 8px;
+  justify-content: center;
+  box-shadow:  0 4px 12px rgba(0, 0, 0, 0.4);
+}
+*/
 
 .outputs-wrapper {
   justify-content: space-between;
@@ -122,6 +132,7 @@ form {
   padding: 16px;
   border-radius: 8px;
   flex: 1 0 auto;
+  box-shadow:  0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .training-plan-wrapper {
@@ -157,10 +168,10 @@ hr {
 }
 
 label {
-  font-size: 0.5rem;
-  text-transform: uppercase;
+  font-size: 1rem;
+  text-transform: none;
   letter-spacing: 0.5px;
-  color: var(--slate-500);
+  color: var(--slate-900);
   margin-bottom: 2px;
 }
 
@@ -176,7 +187,7 @@ select {
 select {
   padding: 8px;
 }
-
+/* submit button */
 button {
   background-color: var(--sky-600);
   border: 0;
@@ -184,7 +195,7 @@ button {
   padding: 8px 16px;
   width: 100%;
   cursor: pointer;
-  box-shadow: var(--sky-900) 4px 4px 0px;
+  box-shadow: var(--sky-900) 0px 4px 5px;
   border-radius: 8px;
   transition: transform 200ms, box-shadow 200ms;
 }
@@ -196,7 +207,19 @@ button:active {
   background-color: var(--sky-600);
   box-shadow: var(--sky-900) 0px 0px 0px;
 }
-
+/* reset button */
+#reset-button {
+  margin-top: 16px;
+  background-color: var(--slate-500);
+  box-shadow: var(--slate-900) 4px 4px 0px;
+  display: none; /* Hide by default */
+}
+#reset-button:focus {
+  background-color: var(--slate-300);
+}
+#reset-button:active {
+  box-shadow: var(--slate-900) 0px 0px 0px;
+}
 .information-field {
   padding: 16px;
   border-radius: 8px;
@@ -208,6 +231,7 @@ button:active {
   border-radius: 8px;
   background-color: var(--white);
 }
+/* radio button */
 .radio-button-field input {
   position: absolute;
   left: -9999px;
@@ -233,7 +257,7 @@ button:active {
   background-color: var(--sky-600);
   color: var(--sky-50);
 }
-
+/* error styles */
 .error-input {
   background-color: var(--error-bkg);
   color: var(--brand-dark);
@@ -253,4 +277,25 @@ button:active {
   letter-spacing: 0.1px;
   list-style: none;
   margin-bottom: 0.5rem;
+}
+
+.results-detail {
+  text-align: center;
+}
+
+.results-name {
+  background-color: var(--sky-600);
+  color: var(--white);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 0.75rem 0;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* Hide elements with the 'hidden' class */
+.hidden {
+  display: none;
 }

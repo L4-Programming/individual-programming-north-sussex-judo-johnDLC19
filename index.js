@@ -4,6 +4,7 @@ import { displayResults } from "./displayResults.js";
 // Display form to the user
 // Capture user's input on form submission
 let form = document.querySelector("form");
+let athleteInfo = document.querySelector(".athlete-info");
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -39,5 +40,22 @@ form.addEventListener("submit", function (event) {
     // Display the total cost to the user
     // Generate weight category based on input
     displayResults(output, currentWeight);
+
+    // Hide the form after successful submission
+    form.classList.add("hidden");
+    resetButton.style.display = "block";
+
+    // Show the athlete info section
+    athleteInfo.classList.remove("hidden");
   }
+});
+
+// Reset button to show the form again and clear inputs/results
+let resetButton = document.querySelector("#reset-button");
+resetButton.addEventListener("click", function () {
+  form.classList.remove("hidden");
+  form.reset();
+  document.querySelector("#results").innerHTML = "Awaiting Input...";
+  resetButton.style.display = "none";
+  athleteInfo.classList.add("hidden");
 });
