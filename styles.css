@@ -117,15 +117,6 @@ form {
   box-shadow:  0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* 
-.inputs-wrapper {
-  background-color: var(--amber-100);
-  border-radius: 8px;
-  justify-content: center;
-  box-shadow:  0 4px 12px rgba(0, 0, 0, 0.4);
-}
-*/
-
 .outputs-wrapper {
   justify-content: space-between;
   background-color: var(--sky-200);
@@ -278,7 +269,7 @@ button:active {
   list-style: none;
   margin-bottom: 0.5rem;
 }
-
+/* Style for Athlete info */
 .results-detail {
   text-align: center;
 }

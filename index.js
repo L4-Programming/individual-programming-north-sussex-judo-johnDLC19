@@ -50,7 +50,7 @@ form.addEventListener("submit", function (event) {
   }
 });
 
-// Reset button to show the form again and clear inputs/results
+// Reset button to show the form again and clear inputs/results, and hide athlete info
 let resetButton = document.querySelector("#reset-button");
 resetButton.addEventListener("click", function () {
   form.classList.remove("hidden");
