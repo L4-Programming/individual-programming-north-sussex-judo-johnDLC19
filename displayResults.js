@@ -20,15 +20,15 @@ export function displayResults(output, currentWeight) {
   results.innerHTML = 
     `
     <div class="results-detail">
-    <h3 class="results-name">Your Name: ${output.name}</h3>
-    <h3>You are in the ${weightCategory} category!</h3>
+    <h5 class="results-name">Your Name: ${output.name}</h5>
+    <h4>You are in the ${weightCategory} category!</h4>
     <p>Your Selected Training Plan: ${output.trainingPlan}</p>
     <p>Training Cost (per week): £${output.trainingCost}</p>
     <p>Number of Competitions Entered This Month: ${output.numOfCompetitions}</p>
     <p>Total Competition Cost: £${output.competitionCost}</p>
     <p>Private Coaching Hours: ${output.privateHours}</p>
     <p>Private Coaching Cost: £${output.privateCost}</p>
-    <h2>Total Monthly Cost: £${output.totalCost}</h2>
+    <h3>Total Monthly Cost: £${output.totalCost}</h3>
     </div>
   `;
 }
