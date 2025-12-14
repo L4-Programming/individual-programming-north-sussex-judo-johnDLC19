@@ -30,12 +30,10 @@ form.addEventListener("submit", function (event) {
     privateHours,
   });
 
-  console.log({ result });
 
   if (result) {
     //calculate total cost
     const output = calculateCosts(result);
-    console.log({ output });
 
     // Display the total cost to the user
     // Generate weight category based on input

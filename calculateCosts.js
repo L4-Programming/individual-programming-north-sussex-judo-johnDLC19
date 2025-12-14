@@ -1,6 +1,4 @@
 export function calculateCosts(data) {
-  console.log("Calculating costs...");
-  console.log({ data });
   const { athleteName, trainingPlan, numOfCompetitions, privateHours } = data;
 
   const trainingPrices = {

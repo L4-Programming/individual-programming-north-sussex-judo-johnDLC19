@@ -14,7 +14,6 @@ export function displayResults(output, currentWeight) {
   } else if (currentWeight <= 66) {
     weightCategory = "Flyweight";
   }
-  console.log(weightCategory);
 
   let results = document.querySelector("#results");
   results.innerHTML = 
