@@ -44,11 +44,16 @@ body {
   5. Improve text rendering
 */
 body {
+  background-image: url('img/judo2.jpg');  /* Points to the image file */
+  background-size: cover;                  /* fills the screen */
+  background-position: center;             /* Centers the image */
+  background-attachment: fixed; 
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--slate-900);
   padding: 2rem;
+  
 }
 
 /*
@@ -148,10 +153,14 @@ h2 {
 }
 h1 {
   margin-bottom: 16px;
+  color: rgb(255, 179, 0);
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 h2 {
   margin-bottom: 8px;
-  color: var(--amber-900);
+  color: rgb(255, 179, 0);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
 hr {
