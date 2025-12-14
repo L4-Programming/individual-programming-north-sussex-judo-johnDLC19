@@ -112,7 +112,7 @@ form {
 
 .inputs-wrapper {
   background-color: var(--amber-100);
-  border-radius: 8px;
+  border-radius: 15px;
   justify-content: center;
   box-shadow:  0 4px 12px rgba(0, 0, 0, 0.4);
 }
@@ -289,4 +289,18 @@ button:active {
 /* Hide elements with the 'hidden' class */
 .hidden {
   display: none;
+}
+
+/* For phone size */
+@media (max-width: 768px) {
+  .inputs-wrapper,
+  .outputs-wrapper {
+    padding: 16px 16px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .wrapper {
+    padding: 0 0px 0px;
+  }
 }
