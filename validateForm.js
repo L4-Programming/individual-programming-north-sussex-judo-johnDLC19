@@ -55,8 +55,11 @@ export function validateForm({
   if (isNaN(currentWeight)) {
     addError("current-weight", "Please enter your current weight");
   }
-  if (currentWeight < 0) {
-    addError("current-weight", "Weight must be above zero");
+  if (currentWeight < 40) {
+    addError("current-weight", "Weight must be above 40kg");
+  }
+  if (currentWeight > 300) {
+    addError("current-weight", "Maximum weight is 300kg");
   }
   // beginner athletes cannot enter competitions
   if (trainingPlan === "beginner" && numOfCompetitions !== 0) {
@@ -68,6 +71,9 @@ export function validateForm({
   // check competitions is above or equal to 0, private hours between 0 and 5
   if (numOfCompetitions < 0) {
     addError("numOfCompetitions", "Number of competitions must be above zero");
+  }
+  if (numOfCompetitions > 5) {
+    addError("numOfCompetitions", "Maximum number of competitions is 5");
   }
 
   if (privateHours < 0 || privateHours > 5) {

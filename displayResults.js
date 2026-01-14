@@ -21,7 +21,7 @@ export function displayResults(output, currentWeight) {
     <div class="results-detail">
     <h5 class="results-name">Your Name: ${output.name}</h5>
     <h4>You are in the ${weightCategory} category!</h4>
-    <p>Your Selected Training Plan: ${output.trainingPlan}</p>
+    <p>Your Selected Training Plan: <h5>${output.trainingPlan}</h5></p>
     <p>Training Cost (per week): £${output.trainingCost}</p>
     <p>Number of Competitions Entered This Month: ${output.numOfCompetitions}</p>
     <p>Total Competition Cost: £${output.competitionCost}</p>
