@@ -16,12 +16,12 @@ export function displayResults(output, currentWeight) {
   }
 
   let results = document.querySelector("#results");
-  results.innerHTML = 
-    `
+  results.innerHTML = `
     <div class="results-detail">
     <h5 class="results-name">Your Name: ${output.name}</h5>
     <h4>You are in the ${weightCategory} category!</h4>
     <p>Your Selected Training Plan: <h5>${output.trainingPlan}</h5></p>
+    <p>Your Weight: ${output.currentWeight}kg</p>
     <p>Training Cost (per week): £${output.trainingCost}</p>
     <p>Number of Competitions Entered This Month: ${output.numOfCompetitions}</p>
     <p>Total Competition Cost: £${output.competitionCost}</p>
